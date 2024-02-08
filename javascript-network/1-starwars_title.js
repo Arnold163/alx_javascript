@@ -21,12 +21,12 @@ function getMovieTitle(movieId) {
 }
 
 function main() {
-    if (Process.argv.length !== 3) {
+    if (process.argv.length !== 3) {
         console.log("Usage: node script.js <movie_id>");
         return;
     }
 
-    const movieId = Process.argv[2];
+    const movieId = process.argv[2];
     getMovieTitle(movieId);
 
     main();
