@@ -15,6 +15,7 @@ if (!url.startsWith('https://')) {
 }
 
 https.get(url, (res) =>  {
+    console.log('Response:',res);
     console.log(`code: ${res.statusCode}`);
 }).on('error', (err) => {
     console.error(`Error: ${err.message}`);
