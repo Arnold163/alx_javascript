@@ -6,7 +6,7 @@ function getMovieTitle(movieId) {
     const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
     request(url, (error, response, body) => {
-        if(error) {
+        if (error) {
             console.error("Error:", error);
             return;
         }
@@ -16,7 +16,7 @@ function getMovieTitle(movieId) {
         }
 
         const movieData = JSON.parse(body);
-        console.log(movieData.getMovieTitle);
+        console.log(movieData.title);
     });
 }
 
@@ -28,6 +28,6 @@ function main() {
 
     const movieId = process.argv[2];
     getMovieTitle(movieId);
-
-    main();
 }
+
+main(); // Corrected placement of this function call
