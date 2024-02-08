@@ -16,7 +16,7 @@ function getMovieTitle(movieId) {
         }
 
         const movieData = JSON.parse(body);
-        console.log(movieData.getMovietitle);
+        console.log(movieData.getMovieTitle);
     });
 }
 
