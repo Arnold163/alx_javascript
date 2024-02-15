@@ -17,7 +17,7 @@ function saveWebpageContent(url, filePath) {
                 console.error('Error writing to file:', err);
                 process.exit(1);
             }
-            console.log(`Webpage content saved to ${filePath} successfully.`);
+           // console.log(`Webpage content saved to ${filePath} successfully.`);
         });
     });
 }
