@@ -1,4 +1,4 @@
-//starwarswig
+//starwars weg antilles
 const request = require('request');
 
 const apiUrl = process.argv[2];
