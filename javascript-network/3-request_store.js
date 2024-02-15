@@ -1,4 +1,4 @@
-//lori ipsim request
+//lori ipsim request d
 const fs = require('fs');
 const request = require('request');
 
@@ -17,7 +17,7 @@ function saveWebpageContent(url, filePath) {
                 console.error('Error writing to file:', err);
                 process.exit(1);
             }
-            console.log();
+            console.log(`Webpage content saved to ${filePath} successfully.`);
         });
     });
 }
