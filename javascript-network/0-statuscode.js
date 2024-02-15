@@ -1,22 +1,14 @@
-//status code
+// status co
+const request = require('request');
 
-const https = require('https');
-
-if (process.argv.length !== 3) {
-    console.log('usage: node 0-statuscode.js <URL>');
-    process.exit(1);
-}
-
+// Get the URL from command line arguments
 const url = process.argv[2];
 
-if (!url.startsWith('https://')) {
-    console.log('Error: URL must start with "https://"');
-    process.exit(1);
-}
-
-https.get(url, (res) => {
-    console.log('Response:', res);
-    console.log(`code: ${res.statusCode}`);
-}).on('error', (err) => {
-    console.error(`Error: ${err.message}`);
+// Making the GET request
+request.get(url, (error, response) => {
+    if (error) {
+        console.error('Error occurred:', error);
+    } else {
+        console.log(`code: ${response.statusCode}`);
+    }
 });
