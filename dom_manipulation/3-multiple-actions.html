@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Modifying Elements</title>
-  <style>
-    img {
-      border: 1px solid black;
-    }
-  </style>
+  <title>Creating and Removing Elements</title>
 </head>
 <body>
-  <img id="myImage" src="https://picsum.photos/200/300" alt="My Image">
+  <div id="container"></div>
+
+  <button id="toggleButton">Toggle Paragraph</button>
 
   <script>
-    // Select the <img> element using its id and store it in a variable
-    var image = document.getElementById("myImage");
+    // Select the container element using its id and store it in a variable
+    var container = document.getElementById("container");
 
-    // Use the DOM API to modify the src attribute
-    image.src = "https://picsum.photos/200/301";
+    // Use the DOM API to create a new <p> element, and add "New paragraph" as its content
+    var newParagraph = document.createElement("p");
+    newParagraph.textContent = "New paragraph";
 
-    // Use the DOM API to modify the alt attribute
-    image.alt = "New image";
+    // Append the newly created paragraph to the container element
+    container.appendChild(newParagraph);
 
-    // Use the DOM API to modify the border style
-    image.style.border = "2px solid red";
+    // Add event listener to toggle the visibility of the paragraph
+    var toggleButton = document.getElementById("toggleButton");
+    var isHidden = false;
+    toggleButton.addEventListener("click", function() {
+      if (isHidden) {
+        newParagraph.style.display = "block";
+        toggleButton.textContent = "Hide Paragraph";
+      } else {
+        newParagraph.style.display = "none";
+        toggleButton.textContent = "Show Paragraph";
+      }
+      isHidden = !isHidden;
+    });
   </script>
 </body>
 </html>
