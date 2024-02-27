@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Available Items</h1>
+    <ul id="itemList"></ul>
+    <script>
+        //local support check
+        function checkLocalStorageSupport() {
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                return true;       
+            }catch (e) {
+                return false;
+            }
+        }
+        //available items
+        const availableItems = ['shampoo', 'soap', 'Sponge', 'Water'];
+
+        //add item to cart
+        function addItemToCart(item) {
+            localStorage.setItem(item, 'true');
+
+        }
+        //create the store 
+        function createStore() {
+            const itemList = document.getElementById('itemList');
+            availableItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                li.addEventListener('click', () => addItemToCart(item));
+                itemList.appendChild(li);
+
+            });
+        }
+        //display cart
+        function displayCart() {
+            const cartItems = Object.keys(localStorage);
+            if (cartItems.length > 0) {
+                const cartMessage = document.createElement('p');
+                cartMessage.textContent = `you previously had ${cartItems.length} items in your cart`;
+                document.body.appendChild(cartMessage);
+
+            }
+        }
+
+        //main
+        function main() {
+            if (!checkLocalStorageSupport()) {
+                alert('Sorry, your browser does not support Web storage. Try again with a better one.');
+
+            }else {
+                createStore();
+                displayCart();
+
+            }
+        }
+
+        // main
+        document.addEventListener('DOMcontentLoaded', main );
+    </script>
+</body>
+</html>
