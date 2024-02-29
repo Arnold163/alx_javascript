@@ -1,5 +1,7 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 document.getElementById('dynamicForm').addEventListener('submit', function(event) {
-    event.preventDefault
+    event.preventDefault();
     if (validateForm()) {
         this.submit();
     }
@@ -34,3 +36,4 @@ function validateForm() {
     }
     return true;
 }
+});
