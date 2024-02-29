@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const uppercaseRegex = /[A-Z]/;
         const lowercaseRegex = /[a-z]/;
         const digitRegex = /[0-9]/;
-        const specialCharRegex = /[!@#$%&*]/;
+        const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-]/;
 
     //check if pass meets all requirements 
      if (
@@ -21,11 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
             specialCharRegex.test(passwordInput)
      ){
             //pass meets requirements, allow form
+        errorElement.textContent = "";
          return true;
         }else {
          //not meet criteria, display error message
-         errorElement.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one numeric digit, and one special character (!@#$%^&*)."
-         return false;
+        errorElement.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one numeric digit, and one special character (!@#$%^&*)."
+        return false;
         }
     }
 
