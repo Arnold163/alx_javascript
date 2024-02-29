@@ -20,7 +20,7 @@ function generateInputFields(numfields) {
     for (let i = 1; i <= numfields; i++) {
         const inputField = document.createElement('input');
         inputField.type = 'text';
-        inputField.name = 'field' + 1;
+        inputField.name = 'field' + i;
         inputContainer.appendChild(inputField);
         inputContainer.appendChild(document.createElement('br'));
     }
