@@ -1,5 +1,3 @@
-const { generate } = require("selfsigned");
-
 document.getElementById('dynamicForm').addEventListener('submit', function(event) {
     event.preventDefault
     if (validateForm()) {
