@@ -7,7 +7,7 @@ document.getElementById('dynamicForm').addEventListener('submit', function(event
     }
 })
 
-document.getElementById('numfields').addEventListener('change', function() {
+document.getElementById('numFields').addEventListener('change', function() {
     const numfields = parseInt(this.value);
     generateInputFields(numfields);
 });
